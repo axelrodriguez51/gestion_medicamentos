@@ -3,7 +3,7 @@ comenzaremos creando las tablas de la base de datos de nuestro proyecto postgres
 */
 create table paciente (
     id_paciente serial primary key,
-    nombres varchar(50) not null,
+    nombre varchar(50) not null,
     apellido_materno varchar(50) not null,
     apellido_paterno varchar(50) not null,
     numero_de_seguro varchar(10) not null,
@@ -20,7 +20,9 @@ create table facultativos (
     apellido_paterno varchar(50) not null,
     especialidad varchar(50) not null,
     telefono varchar(10) not null,
-    email varchar(50) not null
+    email varchar(50) not null,
+    id_direccion int not null,
+    foreign key (id_direccion) references direccion(id_direccion)
 );
 create table direccion (
     id_direccion serial primary key,
